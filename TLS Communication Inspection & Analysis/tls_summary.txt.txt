@@ -1,0 +1,59 @@
+TLS provides confidentiality by encrypting all data using symmetric keys that are securely exchanged during
+the TLS handshake. This means that even if someone intercepts the traffic, they cannot read the encrypted data.
+
+TLS also provides integrity by using message authentication codes (MAC) or authenticated encryption (AEAD).
+These mechanisms ensure that no one can modify the data during transmission. If tampering happens, the recipient 
+will detect it immediately.
+
+Additionally, TLS uses digital certificates to authenticate the server. This prevents attackers from pretending to 
+be the legitimate server (man-in-the-middle attack).
+
+
+TLS Report
+
+1. TLS Handshake Explanation:
+The TLS (Transport Layer Security) handshake is the process that establishes a secure, 
+encrypted connection between a client (e.g., browser) and a server. It ensures authentication,
+confidentiality, and integrity before any sensitive data is exchanged.
+When a client connects to a secure website, it initiates a TLS handshake. 
+During this process:
+- The client sends "ClientHello" with supported TLS versions and cipher suites.
+ClientHello:The client sends a message to the server that includes supported TLS versions, a list of cipher 
+suites, and a random value.
+- The server responds with "ServerHello", selecting the TLS version and cipher suite.
+- The server sends its digital certificate for authentication.
+Certificate Exchange:
+The server sends its digital certificate (containing its public key) to prove its identity. The client 
+verifies this certificate using trusted Certificate Authorities (CAs).
+- Both sides generate session keys using asymmetric cryptography (X25519).
+Key Exchange:
+Both sides generate and exchange cryptographic parameters to derive a shared session key, used for symmetric 
+encryption during the session.
+- After the handshake, all communication is encrypted with symmetric encryption (AES-256).
+Finished Messages:
+Both client and server send “Finished” messages encrypted with the new session key, confirming that the
+ handshake was successful.After this point, all communication is encrypted.
+
+
+2. MITM Protection Mechanisms:
+TLS protects against man-in-the-middle (MITM) attacks through:
+- Digital certificates signed by trusted Certificate Authorities (CAs).
+- Server authentication using digital signatures (ECDSA).
+- Encrypted key exchange preventing attackers from reading or altering messages.
+- Message authentication codes (MAC) ensuring data integrity.
+
+3. TLS Application in Websites:
+In HTTPS, TLS encrypts all data between client and server.
+It ensures:
+- Confidentiality: Data is encrypted with AES-256.
+- Integrity: SHA-384 prevents tampering.
+- Authentication: Certificates prove the website’s identity.
+In this case, google.com uses TLS 1.3 with cipher suite TLS_AES_256_GCM_SHA384.
+
+4. Certificate Details (from openssl):
+Subject: CN = *.google.com
+Issuer: CN = WE2 (Google Trust Services)
+Valid From: Oct 13 2025
+Valid To: Jan 5 2026
+Cipher: TLS_AES_256_GCM_SHA384
+Verification: OK
