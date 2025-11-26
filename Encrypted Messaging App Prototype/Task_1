@@ -1,0 +1,4 @@
+Task 1: Encrypted Messaging App Prototype (8 pts) 
+Goal: Implement a mini encrypted messaging system that supports both RSA and AES. 
+Requirements: User A generates an RSA key pair and shares the public key; User B encrypts a secret message using: AES-256 (with randomly generated key); Encrypts AES key using RSA (User A’s public key) User A decrypts: AES key using their private RSA key Message using the decrypted AES key 
+Deliverables: Python code; message.txt, encrypted_message.bin, aes_key_encrypted.bin, decrypted_message.txt; A markdown file explaining encryption flow 
