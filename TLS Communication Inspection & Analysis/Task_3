@@ -1,0 +1,11 @@
+Instructions:
+1. Connect to any HTTPS website using openssl s_client
+2. Extract and document:
+○ Certificate chain (Root → Intermediate → Leaf)
+○ Cipher suite used
+○ TLS version
+3. Capture a TLS handshake using Wireshark and highlight:
+○ Client Hello
+○ Server Certificate
+○ Key Exchange
+4. Briefly describe how TLS provides confidentiality and integrity
