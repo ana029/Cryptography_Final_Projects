@@ -1,0 +1,9 @@
+Tasks:
+1. Create a Python script that:
+○ Takes a file and computes SHA-256, SHA-1, and MD5 hashes
+○ Stores hashes in a .json file
+2. Simulate tampering by modifying the file and recomputing hashes
+3. Script should detect the change and flag a warning
+Deliverables:
+● hash_util.py, original.txt, tampered.txt, hashes.json
+● Output showing integrity check result (pass/fail)
