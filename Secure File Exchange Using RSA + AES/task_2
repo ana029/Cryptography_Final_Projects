@@ -1,0 +1,20 @@
+Task 2: Secure File Exchange Using RSA + AES (8 pts)
+Objective: Demonstrate hybrid encryption protocol covered in Week 2 & Week 4
+Scenario: Alice wants to send Bob a secret file securely.
+Instructions:
+Steps:
+● Generate an RSA key pair for Bob (using OpenSSL or Python)
+● Alice creates a plaintext message in a file called alice_message.txt
+● Alice generates a random AES-256 key and IV
+● Encrypt the file (alice_message.txt) using AES-256 with the generated key and IV
+● Encrypt the AES key using Bob’s RSA public key
+● Bob decrypts the AES key using his RSA private key
+● Bob uses the decrypted AES key and IV to decrypt the file and recover the original message
+● After decryption, compute the SHA-256 hash of the file and compare it to the original hash for integrity verification
+Deliverables:
+● alice_message.txt – Original plaintext file
+● encrypted_file.bin – File encrypted with AES
+● aes_key_encrypted.bin – AES key encrypted with Bob’s RSA public key
+● decrypted_message.txt – Final output decrypted by Bob
+● public.pem, private.pem – Bob’s RSA key pair
+● README.md – Explanation of the encryption/decryption flow and a comparison between AES and RSA in terms of speed, use case, and security
