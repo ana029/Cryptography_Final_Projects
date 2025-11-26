@@ -1,0 +1,10 @@
+Apply Week 5 concepts on email security
+Scenario: You are securing an internal company message.
+Tasks:
+1. Generate key pairs using GPG or OpenSSL for PGP/S/MIME
+2. Sign and encrypt a text file as "Alice"
+3. Verify and decrypt it as "Bob"
+Deliverables:
+● original_message.txt, signed_message.asc, decrypted_message.txt
+● public.asc, private.key
+● signature_verification.txt explaining how the signature validates the sender
